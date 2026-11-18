@@ -4,28 +4,30 @@ Homebrew tap for [Starfield](https://github.com/waschmittel/starfield), a classi
 screensaver for macOS.
 
 ```sh
-brew install waschmittel/starfield/starfield
+brew install --cask waschmittel/starfield/starfield-app
 # or
 brew tap waschmittel/starfield
-brew install starfield
+brew install --cask starfield-app
 ```
 
-Requires macOS 14 or newer (Apple Silicon and Intel). Then pick **Starfield** in
-**System Settings > Screen Saver**. After an upgrade run `killall legacyScreenSaver WallpaperAgent`
-so the new version is loaded.
+Requires macOS 14 or newer (Apple Silicon and Intel). Open `Starfield.app` once (`open -a Starfield`) to
+register the screen saver extension, then pick **Starfield** in
+**System Settings > Wallpaper > Screen Saver** (macOS 26) or **System Settings > Screen Saver** (macOS 14
+and 15). After an upgrade run `killall WallpaperAgent`.
 
-### Alternative: app extension
+`starfield-app` installs `Starfield.app`, which embeds the screensaver as a modern app extension (the format
+Apple's own savers use, not affected by `legacyScreenSaver`'s memory leaks).
 
-`starfield-app` installs `Starfield.app`, which embeds the same screensaver as a modern app extension (the
-format Apple's own savers use, not affected by `legacyScreenSaver`'s memory leaks). It is experimental,
-as it relies on an undocumented extension point, and conflicts with `starfield`:
+### Deprecated: `starfield` (`.saver` bundle)
+
+The legacy `starfield` cask (`Starfield.saver`) is deprecated in favor of `starfield-app` and conflicts
+with it:
 
 ```sh
-brew install --cask waschmittel/starfield/starfield-app
+brew install --cask waschmittel/starfield/starfield
 ```
 
-Pick **Starfield** in **System Settings > Wallpaper > Screen Saver** (macOS 26) or
-**System Settings > Screen Saver** (macOS 14 and 15). After an upgrade run `killall WallpaperAgent`.
+After an upgrade run `killall legacyScreenSaver WallpaperAgent` so the new version is loaded.
 
 Neither is signed with an Apple Developer ID, so the casks remove the download quarantine flag
 after installing it.

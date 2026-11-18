@@ -7,6 +7,8 @@ cask "starfield" do
   desc "Classic Windows-style starfield screensaver"
   homepage "https://github.com/waschmittel/starfield"
 
+  deprecate! date: "2026-11-18", because: :discontinued, replacement_cask: "starfield-app"
+
   depends_on macos: :sonoma
 
   screen_saver "Starfield.saver"
