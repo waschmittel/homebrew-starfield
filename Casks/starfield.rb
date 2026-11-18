@@ -1,6 +1,6 @@
 cask "starfield" do
-  version "2.0.0"
-  sha256 "e77f2d5b079e26dc502634fed7e1fd4dfb2b281e8cfb4b349f30ba341fdc0259"
+  version "2.0.1"
+  sha256 "a52e745ba32fd7714e06f0bfabacb0f38ebb89c031374fb387736bdaf22c1fe3"
 
   url "https://github.com/waschmittel/starfield/releases/download/v#{version}/Starfield-macos-#{version}.saver.zip"
   name "Starfield"
